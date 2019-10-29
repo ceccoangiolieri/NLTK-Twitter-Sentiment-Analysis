@@ -11,15 +11,10 @@ consumer_secret = 'I64GZgbKGiqqFPHVuIid7HllnVFpgrUKPk6AMY82WqbgCLMhlE'
 access_token = '831787864534941697-yqr1TIbYRq1iIiNI0MqjUygIDQdhpgo'
 access_token_secret = 'iP5v6ZOFJ1WTzaK92ATt09hcJn2u6gVm7TCHplRIOWDXZ'
 
-#auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-#auth.set_access_token(access_token, access_token_secret)
-
-#api = tweepy.API(auth)
-auth = tweepy.AppAuthHandler(consumer_key, consumer_secret)
+auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 
-api = tweepy.API(auth, wait_on_rate_limit=True,
-				   wait_on_rate_limit_notify=True)
+api = tweepy.API(auth)
 
 
 
