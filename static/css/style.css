@@ -180,4 +180,5 @@ img { max-width: 100%; }
 #search_result{
 	text-align: left;
     background-color: white;
+    height:75%;
 }
