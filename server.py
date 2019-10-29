@@ -29,7 +29,7 @@ def search():
     search_tweet = request.form.get("search_query")
     # t = [[]]
     t = []
-    tweets = api.search(search_tweet, tweet_mode='extended', count=100)
+    tweets = api.search(search_tweet, tweet_mode='extended', count=18000)
     for tweet in tweets:
         polarity = TextBlob(tweet.full_text).sentiment.polarity
         subjectivity = TextBlob(tweet.full_text).sentiment.subjectivity
