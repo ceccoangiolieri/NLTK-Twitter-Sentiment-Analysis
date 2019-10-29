@@ -15,7 +15,6 @@ auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 
 api = tweepy.API(auth)
-max_tweets = 1000
 
 #-------------------------------------------------------------------------
 
@@ -30,8 +29,7 @@ def search():
     search_tweet = request.form.get("search_query")
     # t = [[]]
     t = []
-    #tweets = api.search(search_tweet, tweet_mode='extended')
-    tweets = tweepy.Cursor(api.search,count=100)                 
+    tweets = api.search(search_tweet, tweet_mode='extended', count=100)
     for tweet in tweets:
         polarity = TextBlob(tweet.full_text).sentiment.polarity
         subjectivity = TextBlob(tweet.full_text).sentiment.subjectivity
